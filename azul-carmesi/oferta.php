@@ -1,5 +1,4 @@
 
-
 <?php 
 	$resp = $this->apiController->obtenerPorId($oferta_id);
 	if($resp->response==true){
@@ -94,29 +93,24 @@
 						</div>
 
 					</div>
-					<div class=" text-center compartir mt-3">
+					<div class=" text-center compartir mt-3 mb-3">
  					<h4>Compartir</h4>
  					<hr class="linea">
-					<a class="enlaceIcono p-4" href="https://www.facebook.com/jobtifyMX/" target="_blank"><i class="fab fa-facebook-square icon"></i></a> 
-					<a class="enlaceIcono p-4" href="https://twitter.com/JobtifyMX" target="_blank"><i class="fab fa-twitter icon"></i></a>
-					<a class="enlaceIcono p-4" href="https://www.linkedin.com/company/jobtifymx/mycompany/" target="_blank"><i class="fab fa-linkedin icon"></i></a>
-					<a class="enlaceIcono" href="https://www.instagram.com/jobtifyMX/" target="_black"><i class="fab fa-instagram fa-2x fa-fw icon"></i> </a>
+					<a class="enlaceIcono p-2 " href="http://www.facebook.com/sharer.php?u=<?php echo __PATH__?>/oferta/<?php echo $resp->data->oferta_id ?>" target="_blank"><i class="fab fa-facebook-square icon"></i></a> 
+					<a class="enlaceIcono p-2" href="https://twitter.com/?status=<?php echo __PATH__?>/oferta/<?php echo $resp->data->oferta_id ?>" target="_blank"><i class="fab fa-twitter icon"></i></a>
+
+					<a class="enlaceIcono p-2" href="https://www.linkedin.com/shareArticle?url=<?php echo __PATH__?>/oferta/<?php echo $resp->data->oferta_id ?>" target="_blank"><i class="fab fa-linkedin icon"></i></a>
+
+					<a class="enlaceIcono p-2" href="https://telegram.me/share/url?url=<?php echo __PATH__?>/oferta/<?php echo $resp->data->oferta_id ?>" target="_black"><i class="fab fa-telegram"></i> </a>
+
+					<a class="enlaceIcono p-2" href="https://api.whatsapp.com/send?text=<?php echo __PATH__?>/oferta/<?php echo $resp->data->oferta_id ?>" target="_black"><i class="fab fa-whatsapp-square"></i> </a>
  					
  					</div>
-
-
- 				</div>
- 						
- 			</div>
- 					
+ 				</div>						
+ 			</div>					
  		</div>
-
- 		<
-
-
-
- 				
- 			</div>
+	
+ 		</div>
  			
  		</div>
  		
@@ -125,39 +119,6 @@
  </div>
 
 
-
-
-
-
-
-
-
-<!-- 	
-<div class="container w-50 p-3 border rounded oferta-descripcion">
-	<h2><?php echo $resp->data->oferta_titulo ?></h2>
-	<p>Salario: <?php echo $resp->data->oferta_salario ?></p>
-	<p>Jornada laboral: <?php echo $resp->data->oferta_contrato ?></p>
-	<p>Ubicación: <?php echo $resp->data->oferta_nombrelocalidad.', '.$resp->data->oferta_nombremunicipio.', '.$resp->data->oferta_nombreestado.'.'; ?></p>
-	<hr>
-	<?php echo html_entity_decode($resp->data->oferta_descripcion) ?>
-	
-	
-	<!-- <?php if( $resp->data->oferta_mapa != NULL){ ?>
-		<p>Mapa:</p>
-		<div class="map-responsive">
-			<?php echo $resp->data->oferta_mapa ?>
-		</div>
-	<?php
-	    }
-	?> -->
-	
-	
-<!-- 	
-	<br><br>
-	<a href="<?php echo __PATH__.'/oferta/postular/'.$resp->data->oferta_id ?>"><button type="button" class="btn btn-success">Postular ahora</button></a>
-	<br><br>
-</div> -->
- 
 <?php 
 	}else{
 ?>
